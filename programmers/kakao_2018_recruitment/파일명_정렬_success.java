@@ -17,24 +17,6 @@ public class 파일명_정렬_답 {
     private static final int NUMBER_MAX_LENGTH = 5;
 
     public static void main(String[] args) {
-        /*String test = "albd302vle";
-        String[] split = test.split("\\d");
-        String head = split[0];
-        String tail1 = split[1];
-        String tail2 = split[2];
-        String tail3 = split[3];
-        // String tail4 = split[4];
-        // String tail5 = split[5];
-        System.out.println("head: " + head);
-        System.out.println("tail1: " + tail1);
-        System.out.println("tail2: " + tail2);
-        System.out.println("tail3: " + tail3);
-
-        System.out.println("tail1 is empty: " + tail1.isEmpty());
-        System.out.println("tail1 is blank: " + tail1.isBlank());
-        System.out.println("tail2 is empty: " + tail2.isEmpty());
-        System.out.println("tail2 is blank: " + tail2.isBlank());*/
-
         // String[] files = {"img12.png", "img10.png", "img02.png", "img1.png", "IMG01.GIF", "img2.JPG"};
         // 출력: ["img1.png", "IMG01.GIF", "img02.png", "img2.JPG", "img10.png", "img12.png"]
         String[] files = {"F-5 Freedom Fighter", "B-50 Superfortress", "A-10 Thunderbolt II", "F-14 Tomcat"};
