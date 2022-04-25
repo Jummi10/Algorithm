@@ -2,11 +2,11 @@ package practice.inflearn.section7_recursive_tree_graph;
 
 import java.util.*;
 
-public class Main14_그래프_최단거리 {  // 거리 = 그래프의 level
-    private static int[] moves;
+public class Main14_그래프_최단거리_sol {
+    private static int[] moves; // idx까지 가는 최소 거리
 
     public static void main(String[] args) {
-        Main14_그래프_최단거리 main = new Main14_그래프_최단거리();
+        Main14_그래프_최단거리_sol main = new Main14_그래프_최단거리_sol();
 
         Scanner in = new Scanner(System.in);
         int vertexCount = in.nextInt();
@@ -39,42 +39,17 @@ public class Main14_그래프_최단거리 {  // 거리 = 그래프의 level
         queue.add(1);
         boolean[] isVisited = new boolean[vertexCount + 1];
         isVisited[1] = true;
-        int moveCount = 0;
 
         while (!queue.isEmpty()) {
-            int size = queue.size();
-            moveCount++;
+            Integer currentVertex = queue.poll();
 
-            for (int i = 0; i < size; i++) {
-                Integer poll = queue.poll();
-
-                for (int j : graph.get(poll)) {
-                    if (!isVisited[j]) {
-                        moves[j] = moveCount;
-                        isVisited[j] = true;
-
-                        queue.add(j);
-                    }
+            for (int nextVertex : graph.get(currentVertex)) {
+                if (!isVisited[nextVertex]) {
+                    moves[nextVertex] = moves[currentVertex] + 1;
+                    queue.add(nextVertex);
+                    isVisited[nextVertex] = true;
                 }
             }
         }
     }
 }
-/*
-6 9
-1 3
-1 4
-2 1
-2 5
-3 4
-4 5
-4 6
-6 2
-6 5
-
-1->2 3
-1->3 1
-1->4 1
-1->5 2
-1->6 2
- */
