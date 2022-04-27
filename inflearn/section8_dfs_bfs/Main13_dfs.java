@@ -51,23 +51,6 @@ public class Main13_dfs {
     }
 
     private static void findOneIsland(int[][] map, boolean[][] isVisited, int mapLength, int row, int col) {
-        if (row == 0 || row == mapLength + 1 || col == 0 || col == mapLength + 1) {
-            return;
-        }
-
-        boolean isEnd = true;
-        for (int d = 0; d < DIRECTION_COUNT; d++) {
-            int nextRow = row + dR[d];
-            int nextCol = col + dC[d];
-            if (nextRow > 0 && nextRow < mapLength + 1 && nextCol > 0 && nextCol < mapLength + 1 && !isVisited[nextRow][nextCol]) { // 한 군데라도 안 들른 곳이 있다면
-                isEnd = false;
-                break;
-            }
-        }
-        if (isEnd) {
-            return;
-        }
-
         for (int d = 0; d < DIRECTION_COUNT; d++) {
             int nextRow = row + dR[d];
             int nextCol = col + dC[d];
