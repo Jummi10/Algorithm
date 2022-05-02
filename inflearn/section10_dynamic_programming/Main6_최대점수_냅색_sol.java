@@ -24,7 +24,7 @@ public class Main6_최대점수_냅색_sol {
         Arrays.fill(maxScores, 0);
 
         for (Problem problem : problems) {
-            for (int time = limitTime; time >= problem.time; time--) {  // 개수가 1개로 제한될 때는 뒤에서부터 순회
+            for (int time = limitTime; time >= problem.time; time--) {  // 개수가 1개로 제한될 때는 뒤에서부터 순회해야지 중복을 회피한다.
                 maxScores[time] = Math.max(maxScores[time], maxScores[time - problem.time] + problem.score);
             }
         }
